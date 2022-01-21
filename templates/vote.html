@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block page %}
+<form method="POST" action="/">
+{% for field in form %}
+<h1>{{ field.label }}</h1>
+{% for subfield in field %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td><a href="https://replit.com/{{subfield.label.text}}">{{ subfield.label }}</a></td>
+    </tr>
+    <br>
+{% endfor %}
+{% endfor %}
+<br>
+<button type="submit">Submit</button>
+</form>
+{% endblock %}
